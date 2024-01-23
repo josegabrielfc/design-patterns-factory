@@ -14,7 +14,7 @@ import java.util.Map;
  * @author jgfch
  */
 public class PagoFactory {
-
+    /*
     private final static Map<TipoDePago, Pago> pagos = new HashMap<>(){
         {
             put(TipoDePago.PAYPAL, new PagoPaypal());
@@ -22,17 +22,17 @@ public class PagoFactory {
             put(TipoDePago.TARJETA_CREDITO, new PagoTarjetaCredito());
             put(TipoDePago.TARJETA_DEBITO, new PagoTarjetaDebito());
         }
-    };
+    };*/
 
     public Pago obtenerPago(TipoDePago tp) throws NoSuchFieldException {
-        return pagos.get(tp);
-        /*return switch (tp) {
+        //return pagos.get(tp);
+        return switch (tp) {
             case PAYPAL -> new PagoPaypal();
             case GOOGLE_PAY -> new PagoGooglePay();
             case TARJETA_CREDITO -> new PagoTarjetaCredito();
             case TARJETA_DEBITO -> new PagoTarjetaDebito();
             default ->
                 throw new NoSuchFieldException("Tipo de Pago No encontrado");
-        };*/
+        };
     }
 }
